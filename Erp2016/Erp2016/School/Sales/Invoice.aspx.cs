@@ -8,9 +8,7 @@ using System.Text;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Erp2016.Lib;
-using Telerik.Web.Spreadsheet;
 using Telerik.Web.UI;
-using Telerik.Windows.Documents.Spreadsheet.Expressions.Functions;
 using Convert = System.Convert;
 
 namespace School.Sales

@@ -57,6 +57,12 @@
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Erp2016.Lib\Erp2016.Lib.csproj">
+      <Project>{d6b93553-20cb-47c6-9ca9-4144095e77b5}</Project>
+      <Name>Erp2016.Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

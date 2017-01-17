@@ -185,9 +185,9 @@
                                 </Items>
                             </telerik:RadMenuItem>
 
-                            <telerik:RadMenuItem IsSeparator="true" Visible="False"/>
+                            <telerik:RadMenuItem IsSeparator="true" />
 
-                            <telerik:RadMenuItem Text="Registrar" ImageUrl="../../assets/img/Briefcase-20.png" PostBack="False" AccessKey="R" Visible="False">
+                            <telerik:RadMenuItem Text="Registrar" ImageUrl="../../assets/img/Briefcase-20.png" PostBack="False" AccessKey="R" >
                                 <Items>
                                     <telerik:RadMenuItem Text="Students" Value="Student" NavigateUrl="~/Student" ImageUrl="../../assets/img/Students-20.png" Enabled="False" AccessKey="S" />
 
@@ -218,9 +218,9 @@
                                 </Items>
                             </telerik:RadMenuItem>
 
-                            <telerik:RadMenuItem IsSeparator="true" Visible="False"/>
+                            <telerik:RadMenuItem IsSeparator="true" />
 
-                            <telerik:RadMenuItem Text="Sales" ImageUrl="../../assets/img/Coins-20.png" PostBack="False" AccessKey="L" Visible="False">
+                            <telerik:RadMenuItem Text="Sales" ImageUrl="../../assets/img/Coins-20.png" PostBack="False" AccessKey="L" >
                                 <Items>
                                     <telerik:RadMenuItem Text="Invoices" Value="Invoice" NavigateUrl="~/Invoice" ImageUrl="../../assets/img/Invoice-20.png" Enabled="False" AccessKey="I" />
                                     <telerik:RadMenuItem Text="Payments" Value="Payment" NavigateUrl="~/Payment" ImageUrl="../../assets/img/Paid-20.png" Enabled="False" AccessKey="P" />
@@ -232,9 +232,9 @@
                                 </Items>
                             </telerik:RadMenuItem>
 
-                            <telerik:RadMenuItem IsSeparator="true" Visible="False"/>
+                            <telerik:RadMenuItem IsSeparator="true" />
 
-                            <telerik:RadMenuItem Text="Academic Registrar" ImageUrl="../../assets/img/School-20.png" PostBack="False" AccessKey="A" Visible="False">
+                            <telerik:RadMenuItem Text="Academic Registrar" ImageUrl="../../assets/img/School-20.png" PostBack="False" AccessKey="A" >
                                 <Items>
                                     <telerik:RadMenuItem Text="Faculties" Value="Faculty" NavigateUrl="~/Faculty" ImageUrl="../../assets/img/Triangle-20.png" Enabled="False" />
                                     <telerik:RadMenuItem Text="Program Groups" Value="ProgramGroup" NavigateUrl="~/ProgramGroup" ImageUrl="../../assets/img/Rectangle Stroked-20.png" Enabled="False" />
@@ -257,9 +257,9 @@
                                 </Items>
                             </telerik:RadMenuItem>
 
-                            <telerik:RadMenuItem IsSeparator="true" Visible="False"/>
+                            <telerik:RadMenuItem IsSeparator="true" />
 
-                            <telerik:RadMenuItem Text="Student Housing" ImageUrl="../../assets/img/Cottage-20.png" PostBack="False" AccessKey="G" Visible="False">
+                            <telerik:RadMenuItem Text="Student Housing" ImageUrl="../../assets/img/Cottage-20.png" PostBack="False" AccessKey="G" >
                                 <Items>
                                     <telerik:RadMenuItem runat="server" Enabled="False" NavigateUrl="~/HomestayHostRegistration" ImageUrl="../../assets/img/icon_h_sitehome.png" Text="Homestay Host Registration">
                                     </telerik:RadMenuItem>
@@ -281,9 +281,9 @@
                                 </Items>
                             </telerik:RadMenuItem>
 
-                            <telerik:RadMenuItem IsSeparator="true" Visible="False"/>
+                            <telerik:RadMenuItem IsSeparator="true" />
 
-                            <telerik:RadMenuItem Text="Report" ImageUrl="../../assets/img/Document-20.png" PostBack="False" AccessKey="T" Visible="False">
+                            <telerik:RadMenuItem Text="Report" ImageUrl="../../assets/img/Document-20.png" PostBack="False" AccessKey="T" >
                                 <Items>
 
                                     <telerik:RadMenuItem runat="server" Enabled="True" ImageUrl="../../assets/img/Area Chart-20.png" NavigateUrl="~/School/Report/ReportPayout.aspx" Text="AP Aging Report">
