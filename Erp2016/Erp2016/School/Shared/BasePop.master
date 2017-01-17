@@ -1,0 +1,72 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="BasePop.master.cs" Inherits="School.Shared.BasePop" %>
+
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title></title>
+    <link href="~/assets/css/base.css" rel="stylesheet" />
+    
+    <asp:ContentPlaceHolder ID="ContentPlaceHolderHead" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <telerik:RadScriptManager ID="RadScriptManager1" runat="server" EnablePageMethods="true" EnablePartialRendering="true">
+            <Scripts>
+                <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.Core.js" />
+                <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQuery.js" />
+                <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQueryInclude.js" />
+                <telerik:RadScriptReference Path="~/assets/js/base.js" />
+                <telerik:RadScriptReference Path="~/assets/js/jquery.printArea.js" />
+                <%--<telerik:RadScriptReference Path="~/assets/js/printThis.js" />--%>
+            </Scripts>
+        </telerik:RadScriptManager>
+        <telerik:RadStyleSheetManager runat="server" ID="RadStyleSheetManager1" />
+        <telerik:RadFormDecorator ID="RadFormDecorator1" runat="server" DecoratedControls="all" DecorationZoneID="form1" />
+        <telerik:RadAjaxLoadingPanel ID="RadAjaxLoadingPanel1" runat="server" BackgroundTransparency="80" EnableSkinTransparency="False" BackgroundPosition="Center" />
+        <telerik:RadSkinManager ID="RadSkinManager1" runat="server" PersistenceKey="Skin" PersistenceMode="Cookie" />
+        <telerik:RadWindowManager ID="RadWindowManager1" ShowOnTopWhenMaximized="false" ReloadOnShow="true" runat="server" EnableShadow="true" DestroyOnClose="True" VisibleStatusbar="False" Modal="true" Style="z-index: 7001" IconUrl="~/assets/img/bt_mark.png" />
+
+        <asp:UpdatePanel ID="panel1" runat="server" UpdateMode="Conditional">
+            <ContentTemplate>
+
+                <div style="display: none">
+                    <asp:Button ID="ButtonNotification" runat="server" OnClick="ButtonNotification_OnClick" />
+                </div>
+
+                <telerik:RadNotification ID="RadNotification1" runat="server" Height="200px" Width="300px" ContentScrolling="Auto"
+                    Animation="Slide" AutoCloseDelay="3000" Title="Warning" TitleIcon="warning" EnableRoundedCorners="True" EnableShadow="True" OffsetX="-10" OffsetY="-10"
+                    Position="BottomRight" ShowCloseButton="true"
+                    VisibleOnPageLoad="False" LoadContentOn="EveryShow" KeepOnMouseOver="True">
+                    <ContentTemplate>
+                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" Width="100%" ForeColor="Red" CssClass="validationSummary" ValidationGroup="Info"></asp:ValidationSummary>
+                    </ContentTemplate>
+                </telerik:RadNotification>
+
+            </ContentTemplate>
+        </asp:UpdatePanel>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolderBody" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
+            <script type="text/javascript">
+                // validation event
+                var originalValidationSummaryOnSubmit = ValidationSummaryOnSubmit;
+                var ValidationSummaryOnSubmit = function (validationGroup) {
+                    originalValidationSummaryOnSubmit(validationGroup);
+
+                    if (Page_IsValid === false) {
+                        <%= Page.GetPostBackEventReference(ButtonNotification) %>;
+                    }
+                }
+
+            </script>
+        </telerik:RadCodeBlock>
+
+    </form>
+</body>
+</html>

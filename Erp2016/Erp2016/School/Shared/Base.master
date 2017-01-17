@@ -1,0 +1,413 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Base.master.cs" Inherits="School.Shared.Base" %>
+
+<%@ Import Namespace="Erp2016.Lib" %>
+<%@ Import Namespace="Erp2016.Lib.Properties" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <title>ERP</title>
+    <link rel="shortcut icon" href="~/assets/img/logo_loyalist_24x24.png" />
+    <%--<link href="~/assets/css/custom.css" rel="stylesheet" />--%>
+    <link href="~/assets/css/base.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolderHead" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <telerik:RadScriptManager ID="RadScriptManager1" runat="server" EnablePageMethods="true" EnablePartialRendering="true">
+            <Scripts>
+                <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.Core.js" />
+                <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQuery.js" />
+                <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQueryInclude.js" />
+                <telerik:RadScriptReference Path="~/assets/js/base.js" />
+            </Scripts>
+        </telerik:RadScriptManager>
+        <telerik:RadStyleSheetManager runat="server" ID="RadStyleSheetManager1" />
+        <telerik:RadFormDecorator ID="RadFormDecorator1" runat="server" DecoratedControls="all" DecorationZoneID="form1" />
+        <telerik:RadAjaxLoadingPanel ID="RadAjaxLoadingPanel1" runat="server" BackgroundTransparency="80" EnableSkinTransparency="False" BackgroundPosition="Center" />
+        <telerik:RadWindowManager ID="RadWindowManager1" ShowOnTopWhenMaximized="false" ReloadOnShow="true" runat="server" EnableShadow="true" DestroyOnClose="True" VisibleStatusbar="False" Modal="true" Style="z-index: 7001" IconUrl="~/assets/img/bt_assessment.png" />
+
+        <asp:UpdatePanel ID="panel1" runat="server" UpdateMode="Conditional">
+            <ContentTemplate>
+
+                <div style="display: none">
+                    <asp:Button ID="ButtonNotification" runat="server" OnClick="ButtonNotification_OnClick" />
+                </div>
+
+                <telerik:RadNotification ID="RadNotification1" runat="server" Height="250px" Width="400px" ContentScrolling="Auto"
+                    Animation="Slide" AutoCloseDelay="3000" Title="Warning" TitleIcon="warning" EnableRoundedCorners="True" EnableShadow="True" OffsetX="-10" OffsetY="-10"
+                    Position="BottomRight" ShowCloseButton="true"
+                    VisibleOnPageLoad="False" LoadContentOn="EveryShow" KeepOnMouseOver="True">
+                    <ContentTemplate>
+                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" Width="100%" ForeColor="Red" CssClass="validationSummary" ValidationGroup="Info"></asp:ValidationSummary>
+                    </ContentTemplate>
+                </telerik:RadNotification>
+
+            </ContentTemplate>
+        </asp:UpdatePanel>
+
+        <telerik:RadSplitter runat="Server" ID="RadSplitter1"
+            Width="100%" Height="100%" Orientation="Horizontal" VisibleDuringInit="false" BorderSize="0" BorderStyle="None" PanesBorderSize="0">
+            <telerik:RadPane ID="topPane" runat="server" Height="74px">
+
+                <div id="header">
+                    <a href="<%= ResolveUrl("~/Dashboard") %>">
+                        <%--    <%
+                            var startIndex = Settings.Default.ERP2016ConnectionString.IndexOf("Catalog=") + 8;
+                            var endIndex = Settings.Default.ERP2016ConnectionString.LastIndexOf(";Persist") - startIndex;
+                        %>
+                        <div style="height: 7px;"></div>
+                        <label style="font-size: 35px;">!!!!!!!!!! TEST !!!!!!!!!! <%=Settings.Default.ERP2016ConnectionString.Substring(startIndex, endIndex)%></label>--%>
+
+                        <div id="logo" style="width: 300px;"></div>
+                    </a>
+
+                    <%
+                        var p = (PageBase)Page;
+                    %>
+
+                    <div style="top: 2px; right: 250px; position: absolute;">
+                        <telerik:RadBinaryImage ID="RadBinaryImageSiteLogo" runat="server" Width="44" Height="44" ResizeMode="Fit" ImageAlign="Middle" AutoAdjustImageControlSize="False" CssClass="skin-chooser1" />
+                    </div>
+
+                    <div class="skin-chooser" style="display: inline-block;">
+                        <a style="background: url('<%= ResolveUrl("~/assets/img/Medium Icons-20.png") %>') no-repeat; padding-left: 25px;"></a>
+                        <telerik:RadSkinManager ID="RadSkinManager1" runat="server" PersistenceKey="Skin" PersistenceMode="Cookie" ShowChooser="True" OnSkinChanged="RadSkinManager1_OnSkinChanged" OnPreRender="RadSkinManager1_PreRender" />
+
+                        <span style="margin-right: 30px"></span>
+
+                        <a href="<%= ResolveUrl("~/User?me=true") %>" style="color: transparent; background: url('<%= ResolveUrl("~/assets/img/User-20.png") %>') no-repeat; padding-left: 25px;">
+                            <label><b><%= p.CurrentUserName %></b> in <i><%= p.CurrentSiteName %> <%= p.CurrentSiteLocationName %></i></label>
+                        </a>
+
+                        <span style="margin-right: 90px"></span>
+
+                        <a onclick="return ShowMessage();" style="color: transparent; background: url('<%= ResolveUrl("~/assets/img/Message Filled Filled-20.png") %>') no-repeat; padding-left: 25px;">
+                            <label>Messages <b id="bMessage"></b></label>
+                        </a>
+
+                        <span style="margin-right: 30px"></span>
+
+                        <telerik:RadButton ID="RadButtonLogout" runat="server" OnClick="RadButtonLogout_OnClick" Text="Logout" UseSubmitBehavior="False" />
+
+                        <span style="margin-right: 10px"></span>
+                    </div>
+
+                </div>
+                <div class="menu">
+                    <telerik:RadMenu ID="RadMenu1" runat="server" OnClientItemClicking="RadMenu1_OnClientItemClicking" EnableShadows="True" EnableRoundedCorners="True" Width="100%" Style="z-index: 2900">
+                        <Items>
+
+                            <%--
+
+                            icon_s_staff
+                            Work-20
+                                Virtual Machine-20
+                                Administrator-20
+
+                            <telerik:RadMenuItem Text="Attendance" NavigateUrl="~/Attendance" ImageUrl="../../assets/img/Time-20.png" Enabled="False" />
+
+                            <telerik:RadMenuItem IsSeparator="true" />
+
+                            <telerik:RadMenuItem Text="Grade" NavigateUrl="~/Grade" ImageUrl="../../assets/img/Leaderboard-20.png" Enabled="False" />
+                            <telerik:RadMenuItem Text="Grade Schema" NavigateUrl="~/GradeSchema" ImageUrl="../../assets/img/Rating-20.png" Enabled="False" />--%>
+
+                            <telerik:RadMenuItem Text="Home" ImageUrl="../../assets/img/Sugar Cube-20.png" PostBack="False" AccessKey="H">
+                                <Items>
+                                    <telerik:RadMenuItem Text="Dashboards" Value="BulletinBoard" NavigateUrl="~/Dashboard" ImageUrl="../../assets/img/Training-20.png" Enabled="False" />
+
+                                    <telerik:RadMenuItem IsSeparator="true" />
+
+                                    <telerik:RadMenuItem Text="My Profile" Value="User" NavigateUrl="~/User?me=true" ImageUrl="../../assets/img/User-20.png" Enabled="False" />
+                                    <telerik:RadMenuItem Text="My Messages" Value="MyMessage" ImageUrl="../../assets/img/Message Filled Filled-20.png" AccessKey="M" />
+                                </Items>
+                            </telerik:RadMenuItem>
+
+                            <telerik:RadMenuItem IsSeparator="true" />
+
+                            <telerik:RadMenuItem Text="Office Admin" ImageUrl="../../assets/img/Toolbox-20.png" PostBack="False" AccessKey="O">
+                                <Items>
+                                    <telerik:RadMenuItem Text="Users" Value="User" NavigateUrl="~/User" ImageUrl="../../assets/img/Collaborator-20.png" Enabled="False" AccessKey="U" />
+
+                                    <telerik:RadMenuItem IsSeparator="true" />
+
+                                    <telerik:RadMenuItem Text="Expenses" NavigateUrl="~/Expense" ImageUrl="../../assets/img/Cheap 2-20.png" PostBack="False" Enabled="True">
+                                        <Items>
+                                            <telerik:RadMenuItem Text="Request & Approval" Value="Expense" NavigateUrl="~/Expense" ImageUrl="../../assets/img/1 C-20.png" Enabled="False" />
+                                            <telerik:RadMenuItem Text="Monitoring (HQ)" Value="ExpenseForHq" NavigateUrl="~/ExpenseForHq" ImageUrl="../../assets/img/2 C-20.png" Enabled="False" />
+                                        </Items>
+                                    </telerik:RadMenuItem>
+
+                                    <telerik:RadMenuItem Text="Corporate Credit Cards" NavigateUrl="~/CorporateCreditCard" ImageUrl="../../assets/img/Bank Card Back Side-20.png" PostBack="False" Enabled="True">
+                                        <Items>
+                                            <telerik:RadMenuItem Text="Request & Approval" Value="CorporateCreditCard" NavigateUrl="~/CorporateCreditCard" ImageUrl="../../assets/img/1-20.png" Enabled="False" />
+                                            <telerik:RadMenuItem Text="Monitoring (HQ)" Value="CorporateCreditCardForHq" NavigateUrl="~/CorporateCreditCardForHq" ImageUrl="../../assets/img/2-20.png" Enabled="False" />
+                                            <telerik:RadMenuItem Text="Schema" Value="CorporateCreditCardSchema" NavigateUrl="~/CorporateCreditCardSchema" ImageUrl="../../assets/img/3-20.png" Enabled="False" />
+                                        </Items>
+                                    </telerik:RadMenuItem>
+
+                                    <telerik:RadMenuItem Text="Business Trips" NavigateUrl="~/BusinessTrip" ImageUrl="../../assets/img/Airplane Mode On-20.png" PostBack="False" Enabled="True">
+                                        <Items>
+                                            <telerik:RadMenuItem Text="Request & Approval" Value="BusinessTrip" NavigateUrl="~/BusinessTrip" ImageUrl="../../assets/img/1 C-20.png" Enabled="False" />
+                                            <telerik:RadMenuItem Text="Monitoring (HQ)" Value="BusinessTripForHq" NavigateUrl="~/BusinessTripForHq" ImageUrl="../../assets/img/2 C-20.png" Enabled="False" />
+                                        </Items>
+                                    </telerik:RadMenuItem>
+
+                                    <telerik:RadMenuItem Text="Purchase Orders" NavigateUrl="~/PurchaseOrder" ImageUrl="../../assets/img/Buy-20.png" PostBack="False" Enabled="True">
+                                        <Items>
+                                            <telerik:RadMenuItem Text="Request & Approval" Value="PurchaseOrder" NavigateUrl="~/PurchaseOrder" ImageUrl="../../assets/img/1-20.png" Enabled="False" />
+                                            <telerik:RadMenuItem Text="Monitoring (HQ)" Value="PurchaseOrderForHq" NavigateUrl="~/PurchaseOrderForHQ" ImageUrl="../../assets/img/2-20.png" Enabled="False" />
+                                        </Items>
+                                    </telerik:RadMenuItem>
+
+                                    <telerik:RadMenuItem IsSeparator="true" />
+
+                                    <telerik:RadMenuItem Text="Hiring" NavigateUrl="~/Hire" ImageUrl="../../assets/img/Conference Call-20.png" PostBack="False" Enabled="True">
+                                        <Items>
+                                            <telerik:RadMenuItem Text="Request & Approval" Value="Hire" NavigateUrl="~/Hire" ImageUrl="../../assets/img/1 C-20.png" Enabled="False" />
+                                            <telerik:RadMenuItem Text="Monitoring (HQ)" Value="HireForHq" NavigateUrl="~/HireForHQ" ImageUrl="../../assets/img/2 C-20.png" Enabled="False" />
+                                        </Items>
+                                    </telerik:RadMenuItem>
+
+                                    <telerik:RadMenuItem Text="Vacations" NavigateUrl="~/Vacation" ImageUrl="../../assets/img/Beach Umbrella-20.png" PostBack="False" Enabled="True" AccessKey="V">
+                                        <Items>
+                                            <telerik:RadMenuItem Text="Request & Approval" Value="Vacation" NavigateUrl="~/Vacation" ImageUrl="../../assets/img/1-20.png" Enabled="False" />
+                                            <telerik:RadMenuItem Text="Monitoring (HQ)" Value="VacationForHq" NavigateUrl="~/VacationForHq" ImageUrl="../../assets/img/2-20.png" Enabled="False" />
+                                        </Items>
+                                    </telerik:RadMenuItem>
+
+                                    <telerik:RadMenuItem IsSeparator="true" />
+
+                                    <telerik:RadMenuItem Text="Inventory" Value="Inventory" NavigateUrl="~/Inventory" ImageUrl="../../assets/img/Work-20.png" Enabled="False" />
+                                </Items>
+                            </telerik:RadMenuItem>
+
+                            <telerik:RadMenuItem IsSeparator="true" Visible="False"/>
+
+                            <telerik:RadMenuItem Text="Registrar" ImageUrl="../../assets/img/Briefcase-20.png" PostBack="False" AccessKey="R" Visible="False">
+                                <Items>
+                                    <telerik:RadMenuItem Text="Students" Value="Student" NavigateUrl="~/Student" ImageUrl="../../assets/img/Students-20.png" Enabled="False" AccessKey="S" />
+
+                                    <telerik:RadMenuItem IsSeparator="true" />
+
+                                    <telerik:RadMenuItem Text="Agencies" Value="Agency" NavigateUrl="~/Agency" ImageUrl="../../assets/img/Online Support-20.png" Enabled="False" />
+                                    <telerik:RadMenuItem Text="Packages" Value="PackageProgram" NavigateUrl="~/PackageProgram" ImageUrl="../../assets/img/Content-20.png" Enabled="False" />
+
+                                    <telerik:RadMenuItem IsSeparator="true" />
+
+                                    <telerik:RadMenuItem Text="Promotions" Value="Promotion" NavigateUrl="~/Promotion" ImageUrl="../../assets/img/Sale-20.png" Enabled="False" />
+                                    <telerik:RadMenuItem Text="Scholarships" Value="Scholarship" NavigateUrl="~/Scholarship" ImageUrl="../../assets/img/One Free-20.png" Enabled="False" />
+
+                                    <telerik:RadMenuItem IsSeparator="true" />
+
+                                    <telerik:RadMenuItem Text="Refunds" Value="Refund" NavigateUrl="~/Refund" ImageUrl="../../assets/img/Receive Cash-20.png" Enabled="False" />
+
+                                    <telerik:RadMenuItem IsSeparator="true" />
+
+                                    <telerik:RadMenuItem Text="Cancellations" Value="Cancel" NavigateUrl="~/Cancel" ImageUrl="../../assets/img/Cancel-20.png" Enabled="False" />
+                                    <telerik:RadMenuItem Text="Breaks" Value="Break" NavigateUrl="~/Break" ImageUrl="../../assets/img/Pause-20.png" Enabled="False" />
+                                    <telerik:RadMenuItem Text="Schedule Changes" Value="Schedule Change" NavigateUrl="~/ScheduleChange" ImageUrl="../../assets/img/Calendar-20.png" Enabled="False" />
+
+                                    <%-- <telerik:RadMenuItem IsSeparator="true" />
+
+                                    <telerik:RadMenuItem Text="Program Changes" Value="Program Change" NavigateUrl="~/ProgramChange" ImageUrl="../../assets/img/Change Theme-20.png" Enabled="False" />
+                                    <telerik:RadMenuItem Text="Transfers" Value="Transfer" NavigateUrl="~/Transfer" ImageUrl="../../assets/img/Piping-20.png" Enabled="False" />--%>
+                                </Items>
+                            </telerik:RadMenuItem>
+
+                            <telerik:RadMenuItem IsSeparator="true" Visible="False"/>
+
+                            <telerik:RadMenuItem Text="Sales" ImageUrl="../../assets/img/Coins-20.png" PostBack="False" AccessKey="L" Visible="False">
+                                <Items>
+                                    <telerik:RadMenuItem Text="Invoices" Value="Invoice" NavigateUrl="~/Invoice" ImageUrl="../../assets/img/Invoice-20.png" Enabled="False" AccessKey="I" />
+                                    <telerik:RadMenuItem Text="Payments" Value="Payment" NavigateUrl="~/Payment" ImageUrl="../../assets/img/Paid-20.png" Enabled="False" AccessKey="P" />
+                                    <telerik:RadMenuItem Text="Deposits" Value="Deposit" NavigateUrl="~/Deposit" ImageUrl="../../assets/img/Debt-20.png" Enabled="False" AccessKey="D" />
+
+                                    <telerik:RadMenuItem IsSeparator="true" />
+
+                                    <telerik:RadMenuItem Text="Credit Memos" Value="Credit Memo" NavigateUrl="~/CreditMemo" ImageUrl="../../assets/img/Sales Performance-20.png" Enabled="False" AccessKey="C" />
+                                </Items>
+                            </telerik:RadMenuItem>
+
+                            <telerik:RadMenuItem IsSeparator="true" Visible="False"/>
+
+                            <telerik:RadMenuItem Text="Academic Registrar" ImageUrl="../../assets/img/School-20.png" PostBack="False" AccessKey="A" Visible="False">
+                                <Items>
+                                    <telerik:RadMenuItem Text="Faculties" Value="Faculty" NavigateUrl="~/Faculty" ImageUrl="../../assets/img/Triangle-20.png" Enabled="False" />
+                                    <telerik:RadMenuItem Text="Program Groups" Value="ProgramGroup" NavigateUrl="~/ProgramGroup" ImageUrl="../../assets/img/Rectangle Stroked-20.png" Enabled="False" />
+                                    <telerik:RadMenuItem Text="Programs" Value="Program" NavigateUrl="~/Program" ImageUrl="../../assets/img/Circled-20.png" Enabled="False" />
+
+                                    <telerik:RadMenuItem IsSeparator="true" />
+
+                                    <telerik:RadMenuItem Text="Program Courses" Value="ProgramCourse" NavigateUrl="~/ProgramCourse" ImageUrl="../../assets/img/Courses-20.png" Enabled="False" />
+                                    <telerik:RadMenuItem Text="Program Course Levels" Value="ProgramCourseLevel" NavigateUrl="~/ProgramCourseLevel" ImageUrl="../../assets/img/Class-20.png" Enabled="False" />
+
+                                    <telerik:RadMenuItem IsSeparator="true" />
+
+                                    <telerik:RadMenuItem Text="Class Rooms" Value="ProgramClassRoom" NavigateUrl="~/ProgramClassRoom" ImageUrl="../../assets/img/Classroom-20.png" Enabled="False" />
+                                    <telerik:RadMenuItem Text="Class Schedules" Value="ProgramClass" NavigateUrl="~/ProgramClass" ImageUrl="../../assets/img/Curriculum-20.png" Enabled="False" />
+
+                                    <telerik:RadMenuItem IsSeparator="true" />
+
+                                    <telerik:RadMenuItem Text="Grade Schema" Value="GradeSchema" NavigateUrl="~/GradeSchema" ImageUrl="../../assets/img/Rating-20.png" Enabled="False" />
+
+                                </Items>
+                            </telerik:RadMenuItem>
+
+                            <telerik:RadMenuItem IsSeparator="true" Visible="False"/>
+
+                            <telerik:RadMenuItem Text="Student Housing" ImageUrl="../../assets/img/Cottage-20.png" PostBack="False" AccessKey="G" Visible="False">
+                                <Items>
+                                    <telerik:RadMenuItem runat="server" Enabled="False" NavigateUrl="~/HomestayHostRegistration" ImageUrl="../../assets/img/icon_h_sitehome.png" Text="Homestay Host Registration">
+                                    </telerik:RadMenuItem>
+
+                                    <telerik:RadMenuItem runat="server" Enabled="False" ImageUrl="../../assets/img/Key-20.png" NavigateUrl="~/HomestayRequestRegistration" Text="Homestay Placement Request">
+                                    </telerik:RadMenuItem>
+                                    <%--<telerik:RadMenuItem runat="server" Enabled="False" NavigateUrl="~/HomestayPayoutRequest" ImageUrl="../../assets/img/icon_s_assign.png" Text="Homestay Payout Request">
+                                    </telerik:RadMenuItem>
+                                    <telerik:RadMenuItem runat="server" Enabled="False" NavigateUrl="~/HomestayPayoutApproval" ImageUrl="../../assets/img/Ok-20.png" Text="Homestay Payout Approval">
+                                    </telerik:RadMenuItem>
+                                    <telerik:RadMenuItem runat="server" Enabled="False" NavigateUrl="~/HomestaySummary" ImageUrl="../../assets/img/Courses-20.png" Text="Homestay Payout Status">
+                                    </telerik:RadMenuItem>--%>
+                                    <telerik:RadMenuItem IsSeparator="true" />
+                                    <telerik:RadMenuItem runat="server" Enabled="True" NavigateUrl="~/DormitoryHostRegistration" ImageUrl="../../assets/img/icon_h_sitehome.png" Text="Dormitory Host Registration">
+                                    </telerik:RadMenuItem>
+
+                                    <telerik:RadMenuItem runat="server" Enabled="True" ImageUrl="../../assets/img/Key-20.png" NavigateUrl="~/DormitoryRequestRegistration" Text="Dormitory Placement Request">
+                                    </telerik:RadMenuItem>
+                                </Items>
+                            </telerik:RadMenuItem>
+
+                            <telerik:RadMenuItem IsSeparator="true" Visible="False"/>
+
+                            <telerik:RadMenuItem Text="Report" ImageUrl="../../assets/img/Document-20.png" PostBack="False" AccessKey="T" Visible="False">
+                                <Items>
+
+                                    <telerik:RadMenuItem runat="server" Enabled="True" ImageUrl="../../assets/img/Area Chart-20.png" NavigateUrl="~/School/Report/ReportPayout.aspx" Text="AP Aging Report">
+                                    </telerik:RadMenuItem>
+                                    <telerik:RadMenuItem IsSeparator="true" />
+                                    <telerik:RadMenuItem runat="server" Enabled="True" ImageUrl="../../assets/img/Area Chart-20.png" NavigateUrl="~/School/Report/ReportDisbursement.aspx" Text="Disbursement Report">
+                                    </telerik:RadMenuItem>
+                                    <telerik:RadMenuItem IsSeparator="true" />
+                                    <telerik:RadMenuItem runat="server" Enabled="True" ImageUrl="../../assets/img/Area Chart-20.png" NavigateUrl="~/School/Report/ReportHomestay.aspx" Text="Homestay Status Report">
+                                    </telerik:RadMenuItem>
+                                </Items>
+                            </telerik:RadMenuItem>
+
+                            <telerik:RadMenuItem IsSeparator="true" />
+
+                            <telerik:RadMenuItem Text="System" ImageUrl="../../assets/img/Services-20.png" PostBack="False" AccessKey="Y">
+                                <Items>
+                                    <telerik:RadMenuItem Text="Approval Charts" Value="ApprovalChart" NavigateUrl="~/ApprovalChart" ImageUrl="../../assets/img/Flow Chart-20.png" Enabled="False" />
+
+                                    <telerik:RadMenuItem IsSeparator="true" />
+
+                                    <telerik:RadMenuItem Text="Holidays" Value="Holiday" NavigateUrl="~/Holiday" ImageUrl="../../assets/img/Christmas Gift-20.png" Enabled="False" />
+
+                                    <%--<telerik:RadMenuItem IsSeparator="true" />
+
+                                    <telerik:RadMenuItem Text="Dictionaries" Value="Dictionary" NavigateUrl="~/Dict" ImageUrl="../../assets/img/Book-20.png" Enabled="False" />--%>
+                                </Items>
+                            </telerik:RadMenuItem>
+
+                            <telerik:RadMenuItem IsSeparator="true" />
+                        </Items>
+                    </telerik:RadMenu>
+                </div>
+            </telerik:RadPane>
+
+            <telerik:RadPane runat="server" ID="contentPane" Scrolling="none">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolderBody" runat="server">
+                </asp:ContentPlaceHolder>
+            </telerik:RadPane>
+
+        </telerik:RadSplitter>
+
+        <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
+            <script type="text/javascript">
+
+                //function getZoomScale() {
+                //    var zoomValue = parseFloat($('html').css('zoom'));
+                //    if (isNaN(zoomValue)) {
+                //        return 1;
+                //    } else {
+                //        return 1 + (1 - zoomValue);
+                //    }
+                //}
+
+                $.ajaxSetup({
+                    type: "post",
+                    dataType: "json",
+                    contentType: "application/json;charset=utf-8"
+                });
+
+                function ajaxFailed(xmlRequest) {
+                    alert(xmlRequest.status + " \n\r " + xmlRequest.statusText + "\n\r" + xmlRequest.responseText);
+                }
+
+                // jQuery
+                $(window).bind("load", function () {
+                    SetMessageCount();
+                });
+
+                function SetMessageCount() {
+
+                    var param = "";
+                    param += "{userId:'" + '<%= Convert.ToInt32(Session["UserId"]) %>' + "'}";
+
+                    $.ajax({
+                        url: '<%= ResolveUrl("~/School/Shared/Portal.aspx") %>' + '/GetMessageCount',
+                        cache: false,
+                        async: true,
+                        data: param,
+                        success: function (data, status) {
+                            $('#bMessage').html(data.d);
+                        },
+                        error: ajaxFailed
+                    });
+                }
+
+                function OnClientCloseHandler(sender, args) {
+                    SetMessageCount();
+                }
+
+                function ShowMessage() {
+                    var oWnd = window.radopen('<%= ResolveUrl("~/MyMessage") %>', 0, 0, 0, 0);
+                    var displayWidth = $(window).width() * 0.95;
+                    var displayHeight = $(window).height() * 0.95;
+                    if (displayWidth > 1500)
+                        displayWidth = 1500;
+                    oWnd.setSize(displayWidth, displayHeight);
+                    oWnd.center();
+                    oWnd.set_behaviors(Telerik.Web.UI.WindowBehaviors.Close + Telerik.Web.UI.WindowBehaviors.Maximize + Telerik.Web.UI.WindowBehaviors.Resize + Telerik.Web.UI.WindowBehaviors.Move);
+                    oWnd.add_close(OnClientCloseHandler);
+                    return false;
+                }
+
+                function RadMenu1_OnClientItemClicking(sender, args) {
+                    var button = args.get_item();
+                    if (button.get_text() === "My Messages") {
+                        ShowMessage();
+                        args.set_cancel(true);
+                    }
+                }
+
+                // validation event
+                var originalValidationSummaryOnSubmit = ValidationSummaryOnSubmit;
+                var ValidationSummaryOnSubmit = function (validationGroup) {
+                    originalValidationSummaryOnSubmit(validationGroup);
+
+                    if (Page_IsValid === false) {
+                        <%= Page.GetPostBackEventReference(ButtonNotification) %>;
+                    }
+                }
+
+            </script>
+        </telerik:RadCodeBlock>
+
+    </form>
+</body>
+</html>

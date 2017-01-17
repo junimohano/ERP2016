@@ -1,0 +1,443 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D6B93553-20CB-47C6-9CA9-4144095E77B5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Erp2016.Lib</RootNamespace>
+    <AssemblyName>Erp2016.Lib</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Erp2016\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>default</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.Reporting, Version=10.2.16.914, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
+      <HintPath>C:\Program Files (x86)\Telerik\Reporting R3 2016\bin\Telerik.Reporting.dll</HintPath>
+      <SpecificVersion>True</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CInventoryCategory.cs" />
+    <Compile Include="CInventoryCategoryItem.cs" />
+    <Compile Include="CInventory.cs" />
+    <Compile Include="CAgency.cs" />
+    <Compile Include="CCorporateCreditCardSchema.cs" />
+    <Compile Include="CCorporateCreditCard.cs" />
+    <Compile Include="CCryptography.cs" />
+    <Compile Include="CInvoiceItemModel.cs" />
+    <Compile Include="CScheduleChange.cs" />
+    <Compile Include="CProgramChange.cs" />
+    <Compile Include="CCancel.cs" />
+    <Compile Include="CTransfer.cs" />
+    <Compile Include="CBreak.cs" />
+    <Compile Include="CCreditMemoPayoutHistory.cs" />
+    <Compile Include="CDormitoryCost.cs" />
+    <Compile Include="CDormitoryHost.cs" />
+    <Compile Include="CDormitoryHostBed.cs" />
+    <Compile Include="CDormitoryHostPreferredSchool.cs" />
+    <Compile Include="CDormitoryHostRoom.cs" />
+    <Compile Include="CDormitoryPlacement.cs" />
+    <Compile Include="CDormitoryRegistrations.cs" />
+    <Compile Include="CHomestayCost.cs" />
+    <Compile Include="CHomestayPlacement.cs" />
+    <Compile Include="CHomestayStudentRequest.cs" />
+    <Compile Include="CProgramCourseLevel.cs" />
+    <Compile Include="CPromotionModel.cs" />
+    <Compile Include="CProgramSiteLocation.cs" />
+    <Compile Include="CPurchaseOrder.cs" />
+    <Compile Include="CPackageProgramSiteLocation.cs" />
+    <Compile Include="CScholarshipSiteLocation.cs" />
+    <Compile Include="CPromotionSiteLocation.cs" />
+    <Compile Include="CAgencySiteLocation.cs" />
+    <Compile Include="CAgencyCommissionHistory.cs" />
+    <Compile Include="CApproval.cs" />
+    <Compile Include="CApprovalHistory.cs" />
+    <Compile Include="CApprovalSupervisorModel.cs" />
+    <Compile Include="CConstValue.cs" />
+    <Compile Include="CCountryMarket.cs" />
+    <Compile Include="CCreditMemoPayout.cs" />
+    <Compile Include="CHomestayHostBasic.cs" />
+    <Compile Include="CHomestayHostBed.cs" />
+    <Compile Include="CHomestayHostFamilyMember.cs" />
+    <Compile Include="CHomestayHostPreferredSchool.cs" />
+    <Compile Include="CHomestayHostRoom.cs" />
+    <Compile Include="CInvoiceItemFg.cs" />
+    <Compile Include="CFaculty.cs" />
+    <Compile Include="CProgramModel.cs" />
+    <Compile Include="CUserGroup.cs" />
+    <Compile Include="CScholarshipModel.cs" />
+    <Compile Include="CUserPermissionSearchSiteModel.cs" />
+    <Compile Include="CUserPermissionSearchSiteLocationModel.cs" />
+    <Compile Include="CUserPermissionModel.cs" />
+    <Compile Include="CUserPosition.cs" />
+    <Compile Include="CUserHistoryModel.cs" />
+    <Compile Include="CUserInfomation.cs" />
+    <Compile Include="CUserModel.cs" />
+    <Compile Include="CUserSalary.cs" />
+    <Compile Include="CPropertyMapModel.cs" />
+    <Compile Include="CFilterListModel.cs" />
+    <Compile Include="CUserStatusHistory.cs" />
+    <Compile Include="CBulletinBoard.cs" />
+    <Compile Include="CMessage.cs" />
+    <Compile Include="CVacationDetail.cs" />
+    <Compile Include="CUserSalaryModel.cs" />
+    <Compile Include="CVacationTypeInfoModel.cs" />
+    <Compile Include="CVacationTypeModel.cs" />
+    <Compile Include="CVacationSchema.cs" />
+    <Compile Include="CVacation.cs" />
+    <Compile Include="CHire.cs" />
+    <Compile Include="CGrade.cs" />
+    <Compile Include="CGradeSchema.cs" />
+    <Compile Include="CExpense.cs" />
+    <Compile Include="CBusinessTrip.cs" />
+    <Compile Include="CProgramClass.cs" />
+    <Compile Include="CProgramClassRoom.cs" />
+    <Compile Include="CCountry.cs" />
+    <Compile Include="CCreditMemo.cs" />
+    <Compile Include="CCreditMemoCreditHistory.cs" />
+    <Compile Include="CSiteLocation.cs" />
+    <Compile Include="CDeposit.cs" />
+    <Compile Include="CDepositPayment.cs" />
+    <Compile Include="CDict.cs" />
+    <Compile Include="CGlobal.cs" />
+    <Compile Include="CHoliday.cs" />
+    <Compile Include="CInvoice.cs" />
+    <Compile Include="CInvoiceCoaItem.cs" />
+    <Compile Include="CInvoiceItem.cs" />
+    <Compile Include="CListModel.cs" />
+    <Compile Include="CMail.cs" />
+    <Compile Include="CPackageProgram.cs" />
+    <Compile Include="CPayment.cs" />
+    <Compile Include="CUserPermission.cs" />
+    <Compile Include="CProgram.cs" />
+    <Compile Include="CAttendance.cs" />
+    <Compile Include="CProgramClassStudent.cs" />
+    <Compile Include="CProgramCourse.cs" />
+    <Compile Include="CProgramGroup.cs" />
+    <Compile Include="CProgramOtherFeeInfo.cs" />
+    <Compile Include="CProgramOtherInfo.cs" />
+    <Compile Include="CProgramRegistration.cs" />
+    <Compile Include="CProgramFee.cs" />
+    <Compile Include="CProgramTuition.cs" />
+    <Compile Include="CPromotion.cs" />
+    <Compile Include="CRefund.cs" />
+    <Compile Include="CScholarship.cs" />
+    <Compile Include="CSite.cs" />
+    <Compile Include="CUser.cs" />
+    <Compile Include="CStudent.cs" />
+    <Compile Include="CSystemLog.cs" />
+    <Compile Include="CUploadFile.cs" />
+    <Compile Include="Extensions\DataContextExtension.cs" />
+    <Compile Include="linqDB.cs">
+      <DependentUpon>linqDB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="linqDB.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqDB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="linqView.cs">
+      <DependentUpon>linqView.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="linqView.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>linqView.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="CPlacedBedModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Academics\RCertification.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Academics\RCertification.Designer.cs">
+      <DependentUpon>RCertification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Academics\RAttendanceSheet.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Academics\RAttendanceSheet.designer.cs">
+      <DependentUpon>RAttendanceSheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Academics\RCompletedGraduatesStudents.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Academics\RCompletedGraduatesStudents.designer.cs">
+      <DependentUpon>RCompletedGraduatesStudents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Academics\RClassSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Academics\RClassSummary.designer.cs">
+      <DependentUpon>RClassSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Academics\RStartingStudents.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Academics\RStartingStudents.designer.cs">
+      <DependentUpon>RStartingStudents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Schools\RConfirmationOfCompletionLetter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Schools\RConfirmationOfCompletionLetter.Designer.cs">
+      <DependentUpon>RConfirmationOfCompletionLetter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Schools\RConfirmationOfEnrollment.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Schools\RConfirmationOfEnrollment.Designer.cs">
+      <DependentUpon>RConfirmationOfEnrollment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Schools\ROrientationForm.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Schools\ROrientationForm.Designer.cs">
+      <DependentUpon>ROrientationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Schools\RRefundPolicy.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Schools\RRefundPolicy.Designer.cs">
+      <DependentUpon>RRefundPolicy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Temp\RAREntry.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Temp\RAREntry.Designer.cs">
+      <DependentUpon>RAREntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\RInvoiceLumpSum.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\RInvoiceLumpSum.Designer.cs">
+      <DependentUpon>RInvoiceLumpSum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\RDisbursement.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\RDisbursement.Designer.cs">
+      <DependentUpon>RDisbursement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\RHomestay.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\RHomestay.Designer.cs">
+      <DependentUpon>RHomestay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\RPayment.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\RPayment.Designer.cs">
+      <DependentUpon>RPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\RInvoice.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\RInvoice.Designer.cs">
+      <DependentUpon>RInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\RPayout.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\RPayout.Designer.cs">
+      <DependentUpon>RPayout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Schools\RLetterOfAcceptance.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Schools\RLetterOfAcceptance.Designer.cs">
+      <DependentUpon>RLetterOfAcceptance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Schools\RLetterOfAcceptanceInTable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Schools\RLetterOfAcceptanceInTable.Designer.cs">
+      <DependentUpon>RLetterOfAcceptanceInTable.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="linqDB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqDB.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="linqView.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>linqView.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="linqDB.dbml.layout">
+      <DependentUpon>linqDB.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="linqView.dbml.layout">
+      <DependentUpon>linqView.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Report\Academics\RCertification.resx">
+      <DependentUpon>RCertification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Academics\RAttendanceSheet.resx">
+      <DependentUpon>RAttendanceSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Academics\RCompletedGraduatesStudents.resx">
+      <DependentUpon>RCompletedGraduatesStudents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Academics\RClassSummary.resx">
+      <DependentUpon>RClassSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Academics\RStartingStudents.resx">
+      <DependentUpon>RStartingStudents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Schools\RConfirmationOfCompletionLetter.resx">
+      <DependentUpon>RConfirmationOfCompletionLetter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Schools\RConfirmationOfEnrollment.resx">
+      <DependentUpon>RConfirmationOfEnrollment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Schools\ROrientationForm.resx">
+      <DependentUpon>ROrientationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Schools\RRefundPolicy.resx">
+      <DependentUpon>RRefundPolicy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Temp\RAREntry.resx">
+      <DependentUpon>RAREntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RInvoiceLumpSum.resx">
+      <DependentUpon>RInvoiceLumpSum.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RDisbursement.resx">
+      <DependentUpon>RDisbursement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RHomestay.resx">
+      <DependentUpon>RHomestay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RPayment.resx">
+      <DependentUpon>RPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RInvoice.resx">
+      <DependentUpon>RInvoice.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RPayout.resx">
+      <DependentUpon>RPayout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Schools\RLetterOfAcceptance.resx">
+      <DependentUpon>RLetterOfAcceptance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Schools\RLetterOfAcceptanceInTable.resx">
+      <DependentUpon>RLetterOfAcceptanceInTable.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

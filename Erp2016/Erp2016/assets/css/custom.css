@@ -1,0 +1,30 @@
+﻿/*.ie, 
+.ie7,
+.gecko,
+.win.gecko,
+.linux.gecko,
+.opera,
+.konqueror,
+.webkit,*/
+
+html {
+    zoom: 1;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) and (max-width:1366px) {
+    html {
+        zoom: 67%;
+    }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) and (min-width:1440px) and (max-width:1600px) {
+    html {
+        zoom: 75%;
+    }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) and (min-width:1680px) and (max-width:1920px) {
+    html {
+        zoom: 90%;
+    }
+}

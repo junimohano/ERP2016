@@ -1,0 +1,820 @@
+/* Required to have full-screen RadSplitter */
+html, body, form {
+    height: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font: normal 14px/1.5 "Segoe UI", Arial, sans-serif;
+}
+
+form {
+    cursor: default;
+}
+
+.RadForm_Default body {
+    color: black;
+    background-color: white;
+}
+
+.RadForm_Default a {
+    color: #6c6c6c;
+}
+
+    .RadForm_Default a:hover {
+        color: black;
+    }
+
+.RadForm_Black body {
+    color: white;
+    background-color: #202020;
+}
+
+.RadForm_Black a {
+    color: #9eda29;
+}
+
+    .RadForm_Black a:hover {
+        color: #9eda29;
+    }
+
+.RadForm_BlackMetroTouch body {
+    color: white;
+    background-color: black;
+}
+
+.RadForm_BlackMetroTouch a {
+    color: #25a0da;
+}
+
+    .RadForm_BlackMetroTouch a:hover {
+        color: #25a0da;
+    }
+
+.RadForm_Forest body {
+    color: #2b2c20;
+    background-color: #d3e0c2;
+}
+
+.RadForm_Forest a {
+    color: #7a1b05;
+}
+
+    .RadForm_Forest a:hover {
+        color: #7a1b05;
+    }
+
+.RadForm_Glow body {
+    color: white;
+    background-color: #29343b;
+}
+
+.RadForm_Glow a {
+    color: #ffa915;
+}
+
+    .RadForm_Glow a:hover {
+        color: #ffa915;
+    }
+
+.RadForm_Hay body {
+    color: #272722;
+    background-color: white;
+}
+
+.RadForm_Hay a {
+    color: #279500;
+}
+
+    .RadForm_Hay a:hover {
+        color: #279500;
+    }
+
+.RadForm_Metro body {
+    color: black;
+    background-color: white;
+}
+
+.RadForm_Metro a {
+    color: #25a0da;
+}
+
+    .RadForm_Metro a:hover {
+        color: #25a0da;
+    }
+
+.RadForm_MetroTouch body {
+    color: black;
+    background-color: white;
+}
+
+.RadForm_MetroTouch a {
+    color: #25a0da;
+}
+
+    .RadForm_MetroTouch a:hover {
+        color: #25a0da;
+    }
+
+.RadForm_Office2007 body {
+    color: black;
+    background-color: white;
+}
+
+.RadForm_Office2007 a {
+    color: #00156e;
+}
+
+    .RadForm_Office2007 a:hover {
+        color: #00156e;
+    }
+
+.RadForm_Office2010Black body {
+    color: #e2e2e2;
+    background-color: #6f6f6f;
+}
+
+.RadForm_Office2010Black a {
+    color: white;
+}
+
+    .RadForm_Office2010Black a:hover {
+        color: white;
+    }
+
+.RadForm_Office2010Blue body {
+    color: #384e73;
+    background-color: white;
+}
+
+.RadForm_Office2010Blue a {
+    color: black;
+}
+
+    .RadForm_Office2010Blue a:hover {
+        color: black;
+    }
+
+.RadForm_Office2010Silver body {
+    color: #3b3b3b;
+    background-color: #dbdfe4;
+}
+
+.RadForm_Office2010Silver a {
+    color: black;
+}
+
+    .RadForm_Office2010Silver a:hover {
+        color: black;
+    }
+
+.RadForm_Outlook body {
+    color: black;
+    background-color: white;
+}
+
+.RadForm_Outlook a {
+    color: #003c74;
+}
+
+    .RadForm_Outlook a:hover {
+        color: #003c74;
+    }
+
+.RadForm_Silk body {
+    color: #333333;
+    background-color: white;
+}
+
+.RadForm_Silk a {
+    color: #0394ae;
+}
+
+    .RadForm_Silk a:hover {
+        color: #0394ae;
+    }
+
+.RadForm_Simple body {
+    color: black;
+    background-color: white;
+}
+
+.RadForm_Simple a {
+    color: #882501;
+}
+
+    .RadForm_Simple a:hover {
+        color: #882501;
+    }
+
+.RadForm_Sitefinity body {
+    color: black;
+    background-color: white;
+}
+
+.RadForm_Sitefinity a {
+    color: #105cb6;
+}
+
+    .RadForm_Sitefinity a:hover {
+        color: #105cb6;
+    }
+
+.RadForm_Sunset body {
+    color: #272727;
+    background-color: white;
+}
+
+.RadForm_Sunset a {
+    color: #982e00;
+}
+
+    .RadForm_Sunset a:hover {
+        color: #982e00;
+    }
+
+.RadForm_Telerik body {
+    color: black;
+    background-color: white;
+}
+
+.RadForm_Telerik a {
+    color: #1e7f00;
+}
+
+    .RadForm_Telerik a:hover {
+        color: #1e7f00;
+    }
+
+.RadForm_Transparent body {
+    color: black;
+    background-color: white;
+}
+
+.RadForm_Transparent a {
+    color: #0000ee;
+}
+
+    .RadForm_Transparent a:hover {
+        color: #0000ee;
+    }
+
+.RadForm_Vista body {
+    color: black;
+    background-color: white;
+}
+
+.RadForm_Vista a {
+    color: #0066cc;
+}
+
+    .RadForm_Vista a:hover {
+        color: #0066cc;
+    }
+
+.RadForm_Web20 body {
+    color: black;
+    background-color: white;
+}
+
+.RadForm_Web20 a {
+    color: #0f3789;
+}
+
+    .RadForm_Web20 a:hover {
+        color: #0f3789;
+    }
+
+.RadForm_WebBlue body {
+    color: black;
+    background-color: white;
+}
+
+.RadForm_WebBlue a {
+    color: #0053a5;
+}
+
+    .RadForm_WebBlue a:hover {
+        color: #0053a5;
+    }
+
+.RadForm_Windows7 body {
+    color: black;
+    background-color: white;
+}
+
+.RadForm_Windows7 a {
+    color: #0066cc;
+}
+
+    .RadForm_Windows7 a:hover {
+        color: #0066cc;
+    }
+
+#header, .menu {
+    zoom: 1;
+}
+
+    #header:after, .menu:after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+
+#header {
+    height: 48px;
+    background-color: transparent;
+    background-repeat: repeat-x;
+}
+
+    #header #logo {
+        width: 196px;
+        height: 48px;
+        background-color: transparent;
+        background-repeat: no-repeat;
+    }
+
+.RadForm_Black #logo,
+.RadForm_BlackMetroTouch #logo,
+.RadForm_Forest #logo,
+.RadForm_Glow #logo,
+.RadForm_Hay #logo,
+.RadForm_Office2010Black #logo,
+.RadForm_Sitefinity #logo,
+.RadForm_Transparent #logo {
+    background-image: url("../img/portal_logo.png");
+}
+
+.RadForm_Metro #logo,
+.RadForm_MetroTouch #logo,
+.RadForm_Outlook #logo,
+.RadForm_Office2007 #logo,
+.RadForm_Office2010Blue #logo,
+.RadForm_Office2010Silver #logo,
+.RadForm_Silk #logo,
+.RadForm_Sunset #logo,
+.RadForm_WebBlue #logo,
+.RadForm_Web20 #logo,
+.RadForm_Vista #logo,
+.RadForm_Windows7 #logo,
+.RadForm_Default #logo,
+.RadForm_Bootstrap #logo,
+.RadForm_Simple #logo,
+.RadForm_Telerik #logo,
+.RadForm_Material #logo {
+    background-image: url("../img/portal_logo1.png");
+}
+
+.skin-chooser {
+    position: absolute;
+    top: 10px;
+    right: 13px;
+    cursor: default;
+    color: #fff;
+}
+
+.rcbSlide {
+    z-index: 10000 !important;
+}
+
+.menu .RadMenu {
+    width: 100%;
+    float: none;
+    display: block;
+}
+
+/* move the last menu item to the right */
+/* center the calendars */
+.calendar-container {
+    width: 220px;
+    margin: 10px auto;
+    position: relative;
+}
+
+.RadForm_MetroTouch .calendar-container, .RadForm_BlackMetroTouch .calendar-container {
+    width: 310px;
+}
+
+html .RadCalendar_MetroTouch,
+html .RadCalendar_MetroTouch {
+    width: 310px;
+}
+
+/* FF2 bugfix*/
+#RAD_SPLITTER_PANE_CONTENT_ctl00_topPane {
+    overflow: visible !important;
+}
+
+
+#RAD_SPLITTER_PANE_CONTENT_ctl00_ContentPlaceHolder2_RadPane1 {
+    overflow: hidden;
+}
+
+#ctl00_ContentPlaceHolder1_ctl00_ContentPlaceHolder2_DetailsView1Panel {
+    overflow-x: hidden;
+}
+
+
+
+/* required so RadGrid in the Contacts page is 100% tall in FireFox */
+#ctl00_ContentPlaceHolder1_ctl00_ContentPlaceHolder2_RadGrid1Panel {
+    height: 100%;
+}
+
+/* apply height to the update panel that contains the RadScheduler
+   so it can resize properly */
+#ctl00_ContentPlaceHolder1_ctl00_ContentPlaceHolder2_RadScheduler1Panel {
+    height: 100%;
+}
+
+/* fix for a z-index issue with the RadMenu overlapping the RadScheduler advanced form
+    in IE9 (IE7 & 8 Standards) and IE9 Compat View (IE7 & 8 Standars) */
+#RAD_SPLITTER_PANE_TR_ctl00_topPane {
+    position: relative;
+}
+
+/* fix an issue where RadScheduler grid is shrunk in IE9 (IE7 & 8 Standards) and IE9 Compat View (IE7 & 8 Standars) */
+div.RadScheduler .rsHorizontalHeaderTable,
+div.RadScheduler .rsContentTable,
+div.RadScheduler .rsAllDayTable {
+    width: 100%\9 !important;
+}
+
+/* fix an issue where RadScheduler grid is shrunk in IE9 (IE7 & 8 Standards) and IE9 Compat View (IE7 & 8 Standars) */
+* + html div.RadScheduler .rsHorizontalHeaderTable,
+* + html div.RadScheduler .rsContentTable,
+* + html div.RadScheduler .rsAllDayTable {
+    width: auto !important;
+}
+
+.RadToolBar .rtbTemplate .RadInput {
+    line-height: 22px;
+    display: -moz-inline-stack;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    vertical-align: baseline;
+}
+
+.RadToolBar .RadComboBox,
+.RadMenu .RadComboBox,
+.RadMenu .skinLabel {
+    vertical-align: middle;
+}
+
+* html .RadMenu .rmTemplate .rmText {
+    padding-bottom: 3px;
+}
+
+.contacts-filter-toolbar .rtbTemplate {
+    color: white;
+    width: 400px;
+}
+
+div.RadToolBar {
+    width: 100%;
+}
+
+div.inbox-search-toolbar .rtbOuter,
+div.inbox-search-toolbar .rtbMiddle,
+div.inbox-search-toolbar .rtbInner,
+div.contacts-filter-toolbar .rtbOuter,
+div.contacts-filter-toolbar .rtbMiddle,
+div.contacts-filter-toolbar .rtbInner {
+    border-left-width: 0;
+    border-right-width: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+div.inbox-search-toolbar .rtbTemplate {
+    margin-left: 100px;
+}
+
+/* message DetailsView*/
+#message-body {
+    padding: 0 16px 25px;
+}
+
+.message-view {
+    width: 100%;
+}
+
+    .message-view ul {
+        margin: 10px 6px;
+        padding: 0;
+        list-style: none;
+        border-bottom: 1px solid #add1ff;
+    }
+
+        .message-view ul h3 {
+            margin: 0;
+        }
+
+    .message-view li label {
+        display: inline-block;
+        width: 40px;
+        color: #6f9dd9;
+    }
+
+/* contact details nested view template */
+.contact-details img {
+    float: left;
+    margin: 0 12px 0 6px;
+}
+
+* html .contact-details img {
+    margin-left: 3px;
+}
+
+.contact-details ul {
+    list-style: none;
+    margin: 10px;
+}
+
+.contact-details label {
+    display: inline-block;
+    font-weight: bold;
+    width: 80px;
+}
+
+.rpTemplate input {
+    vertical-align: middle;
+    margin-top: 0;
+}
+
+.rpSLide {
+    position: relative;
+    z-index: 1;
+}
+
+/* <notes> */
+.notes-list img {
+    vertical-align: text-top;
+    margin: 0 4px 0 0;
+}
+
+/* </notes> */
+/* <calendar> */
+div.RadScheduler .rsAdvancedEdit .rsAdvRadio {
+    margin-right: 4px;
+}
+
+/* </calendar> */
+.RadPanelBar .rpExpandHandle {
+    display: none;
+}
+
+.RadPanelBar .rpExpandable .rpExpandHandle,
+.RadPanelBar .rpExpanded .rpExpandHandle {
+    display: block;
+}
+
+.RadPanelBar_MetroTouch .rpImage,
+.RadPanelBar_BlackMetroTouch .rpImage {
+    margin: 12px 5px 0 0;
+}
+
+
+
+
+
+/* ==============================================
+    Added
+    =============================================
+*/
+.Graduated {
+    background: #ceffb8;
+}
+
+.Transferred {
+    background: #bbc8ff;
+}
+
+.Cancelled {
+    background: #ffe5bb;
+}
+
+.Withdrawed {
+    background: #ffbbbb;
+}
+
+.Incomplete {
+    background: #f9ffbb;
+}
+
+.Extended {
+    background: #fcd2ff;
+}
+
+.Completed {
+    background: #9af7ff;
+}
+
+.hidden {
+    display: none;
+}
+
+.formStyle1 {
+    margin: 20px;
+}
+
+    .formStyle1 label {
+        width: 120px;
+        text-align: right;
+        float: left;
+        margin-right: 5px;
+    }
+
+    .formStyle1 input[type='checkbox'] {
+        margin-top: 4px;
+    }
+
+    .formStyle1 div {
+        margin-bottom: 5px;
+    }
+
+
+.formStyle2 {
+    padding: 10px;
+}
+
+    .formStyle2 label {
+        float: left;
+        width: 80px;
+        clear: both;
+        text-align: right;
+        margin-right: 10px;
+    }
+
+    .formStyle2 div {
+        margin-bottom: 6px;
+    }
+
+.formStyle3 {
+    padding: 10px;
+}
+
+    .formStyle3 label {
+        float: left;
+        width: 150px;
+        clear: both;
+        text-align: right;
+        margin-right: 10px;
+    }
+
+    .formStyle3 div {
+        margin-bottom: 5px;
+    }
+
+    .formStyle3 fieldset {
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+
+.formStyle4 {
+    margin: 20px;
+}
+
+    .formStyle4 label {
+        width: 220px;
+        text-align: right;
+        float: left;
+        margin-right: 5px;
+        margin-top: 5px;
+    }
+
+    .formStyle4 input[type='checkbox'] {
+        margin-top: 4px;
+    }
+
+    .formStyle4 div {
+        margin-bottom: 5px;
+    }
+
+
+/* Calendar for vacation */
+
+.PaidFullDay {
+    background: url(../img/calendar_paid_fullday.png) no-repeat;
+}
+
+.PaidHalfDay {
+    background: url(../img/calendar_paid_halfday.png) no-repeat;
+}
+
+.UnPaidFullDay {
+    background: url(../img/calendar_unpaid_fullday.png) no-repeat;
+}
+
+.UnPaidHalfDay {
+    background: url(../img/calendar_unpaid_halfday.png) no-repeat;
+}
+
+.SickFullDay {
+    background: url(../img/calendar_sick_fullday.png) no-repeat;
+}
+
+.SickHalfDay {
+    background: url(../img/calendar_sick_halfday.png) no-repeat;
+}
+
+.EntitlementFullDay {
+    background: url(../img/calendar_entitlement_fullday.png) no-repeat;
+}
+
+.EntitlementHalfDay {
+    background: url(../img/calendar_entitlement_halfday.png) no-repeat;
+}
+
+/* Calendar for attendance */
+.AbsentAttendance {
+    background: url(../img/attendance_red.png) no-repeat;
+}
+
+.BreakAttendance {
+    background: url(../img/attendance_violet.png) no-repeat;
+}
+
+.DismissalAttendance {
+    background: url(../img/attendance_yellow.png) no-repeat;
+}
+
+.ExcuseAttendance {
+    background: url(../img/attendance_pink.png) no-repeat;
+}
+
+.LateAttendance {
+    background: url(../img/attendance_orange.png) no-repeat;
+}
+
+.PresentAttendance {
+    background: url(../img/attendance_blue.png) no-repeat;
+}
+
+.ProbationAttendance {
+    background: url(../img/attendance_green.png) no-repeat;
+}
+
+.CoopAttendance {
+    background: url(../img/attendance_skyblue.png) no-repeat;
+}
+
+.WithdrawalAttendance {
+    background: url(../img/attendance_indigo.png) no-repeat;
+}
+
+/*.RadToolBar .ButtonGoesRight {
+    position: absolute;
+    right: 11px;
+    top: 7px;
+}*/
+
+.RadSizeMultiLine {
+    height: 100px !important;
+    width: 400px !important;
+}
+
+.RadSizeSmall {
+    width: 225px !important;
+}
+
+.RadSizeMiddle {
+    width: 250px !important;
+}
+
+.RadSizeLarge {
+    width: 400px !important;
+}
+
+h4 {
+    margin-left: 5px !important;
+}
+
+@media print {
+    body {
+        height: auto !important;
+        font-size: 10px !important;
+    }
+
+    .RadSizeMultiLine {
+        height: 70px !important;
+        width: 230px !important;
+    }
+
+    .RadSizeSmall {
+        width: 150px !important;
+    }
+
+    .RadSizeMiddle {
+        width: 180px !important;
+    }
+
+    .RadSizeLarge {
+        width: 250px !important;
+    }
+
+    * {
+        font-size: 10px;
+    }
+}

@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Erp2016", "Erp2016", "{4A89EBFF-3A4A-47DF-A381-201D051E9AA1}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		ProjectReferences = ""
+		Debug.AspNetCompiler.VirtualPath = "/localhost_59332"
+		Debug.AspNetCompiler.PhysicalPath = "Erp2016\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59332\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_59332"
+		Release.AspNetCompiler.PhysicalPath = "Erp2016\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59332\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "59332"
+		SlnRelativePath = "Erp2016\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+	ProjectSection(ProjectDependencies) = postProject
+		{D6B93553-20CB-47C6-9CA9-4144095E77B5} = {D6B93553-20CB-47C6-9CA9-4144095E77B5}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erp2016.UnitTest", "Erp2016.UnitTest\Erp2016.UnitTest.csproj", "{3AEC3067-BF29-4670-9476-0B42584B19CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erp2016.Lib", "Erp2016.Lib\Erp2016.Lib.csproj", "{D6B93553-20CB-47C6-9CA9-4144095E77B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A89EBFF-3A4A-47DF-A381-201D051E9AA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A89EBFF-3A4A-47DF-A381-201D051E9AA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A89EBFF-3A4A-47DF-A381-201D051E9AA1}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A89EBFF-3A4A-47DF-A381-201D051E9AA1}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{3AEC3067-BF29-4670-9476-0B42584B19CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AEC3067-BF29-4670-9476-0B42584B19CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AEC3067-BF29-4670-9476-0B42584B19CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AEC3067-BF29-4670-9476-0B42584B19CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6B93553-20CB-47C6-9CA9-4144095E77B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6B93553-20CB-47C6-9CA9-4144095E77B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6B93553-20CB-47C6-9CA9-4144095E77B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6B93553-20CB-47C6-9CA9-4144095E77B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://junancanada.visualstudio.com/
+		SccWebProject0 = true
+		SccProjectUniqueName0 = Erp2016
+		SccProjectName0 = Erp2016
+		SccLocalPath0 = Erp2016
+		SccProjectEnlistmentChoice0 = 2
+		SccProjectUniqueName1 = Erp2016.Lib\\Erp2016.Lib.csproj
+		SccProjectName1 = Erp2016.Lib
+		SccLocalPath1 = Erp2016.Lib
+		SccLocalPath2 = .
+		SccProjectUniqueName3 = Erp2016.UnitTest\\Erp2016.UnitTest.csproj
+		SccProjectName3 = Erp2016.UnitTest
+		SccLocalPath3 = Erp2016.UnitTest
+	EndGlobalSection
+EndGlobal
